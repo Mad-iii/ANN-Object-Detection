@@ -368,6 +368,13 @@ def main():
             print("[INFO] End of stream.")
             break
 
+
+        # ── Mirror Mode ───────────────────────────────────────────────────────
+        # If using a webcam, flip the frame horizontally so it acts like a mirror.
+        if isinstance(source, int):
+            frame = cv2.flip(frame, 1)
+
+      
         # ── FPS calculation (Exponential Moving Average) ──────────────────────
         # EMA smooths out frame-to-frame jitter in the displayed FPS number.
         # Formula: new_avg = 0.9 * old_avg + 0.1 * current_fps
