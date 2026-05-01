@@ -21,10 +21,10 @@ object_tracker/
 pip install -r requirements.txt
 
 # 2. Run with webcam
-python main.py
+python main.py --source 0 --skip 2 --conf 0.5
 
 # 3. Run with a video file
-python main.py --source path/to/video.mp4
+python main.py --source source.mp4 --model yolov8n.pt --conf 0.5 --skip 2
 
 # 4. Save output to output.mp4
 python main.py --source video.mp4 --save
@@ -68,7 +68,3 @@ python main.py --source video.mp4 --save
 - YOLOv8 weights download automatically on first run (~6 MB for nano)
 - DeepSORT's MobileNet embedder also downloads on first run
 - Output saved as `output.mp4` in the project folder when `--save` is used
-
-
-For source file use: 
-python main.py --source source.mp4 --model yolov8n.pt --conf 0.5 --skip 2
